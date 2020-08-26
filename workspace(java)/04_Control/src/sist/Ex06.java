@@ -11,9 +11,9 @@ package sist;
  * 				조건식이 거짓인 경우 실행문;
  * 			}
  */
-
+ 
 public class Ex06 {
-
+ 
 	public static void main(String[] args) {
 		
 		System.out.println("프로그램 시작");

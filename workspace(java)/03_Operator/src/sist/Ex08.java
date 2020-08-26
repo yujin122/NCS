@@ -15,7 +15,7 @@ public class Ex08 {
 
 	public static void main(String[] args) {
 		
-		int num1 = 10, num2 = 5;
+		int num2 = 5;
 		// 십진수를 이진수로 변환
 		// num1 = 1010, num2 = 0101
 		System.out.println(num2 << 3);

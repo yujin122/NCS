@@ -27,11 +27,22 @@ package sist;
  * 			}else{
  * 				조건식 1, 조건식2, 조건식3 모두가  거짓인 경우 실행문;
  * 			}  					
- */
+ */ 
 public class Ex12 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		int num = 3;
+		
+		if(num == 1) {
+			System.out.println("입력된 숫자는 1 입니다.");
+		}else if(num==2) {
+			System.out.println("입력된 숫자는 2 입니다.");
+		}else if(num==3) {
+			System.out.println("입력된 숫자는 3 입니다.");
+		}else {
+			System.out.println("1 ~ 3 이외의 숫자입니다.");
+		}
 
 	}
 

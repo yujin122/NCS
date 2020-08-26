@@ -15,7 +15,7 @@ public class Ex06 {
 		
 		// 배정연산자
 		// 변수 = 숫자(리터럴)
-		int su1 = 10, su2 = 27, result = 0;
+		int su1 = 10, su2 = 27, result=0;
 		
 		// 변수 = 변수
 		su1 = su2;
