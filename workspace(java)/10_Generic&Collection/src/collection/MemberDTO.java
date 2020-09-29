@@ -10,7 +10,7 @@ package collection;
  * 	 2. setter() : 지정자 메서드
  * 	 3. getter() : 획득자 메서드
  */
-
+ 
 public class MemberDTO {
 	
 	// 만약 DB 상에 테이블 이름이 member(회원 테이블)라고 가정했을 때

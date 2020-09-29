@@ -2,15 +2,23 @@ package collection;
 
 public class StudentDTO {
 	
-	private String id;
+	private int id;
 	private String name;
 	private String major;
+	private String phone;
 	private String addr;
+	 
+	public String getPhone() {
+		return phone;
+	} 
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

@@ -66,7 +66,7 @@ public class Ex01 {
 		
 		// 5. list의 특정 요소(index)를 삭제하는 메서드 : remove()
 		//	    다음 index부터 index 값이 한칸씩 당겨진다.
-		list.remove(1);
+		list.remove(1); 
 		for(int i =0; i<list.size();i++) {
 			System.out.println("list["+i+"] : " + list.get(i));
 		}	

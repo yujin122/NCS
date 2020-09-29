@@ -1,4 +1,4 @@
-package collection;
+ package collection;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ import java.util.*;
  * 	 3) 빈번한 객체의 삽입과 삭제가 일어나는 곳에서는
  * 		ArrayList보다 더 큰 성능을 발휘함
  * 		(단, 중간에 데이터 삽입과 삭제가 일어나는 경우에만 해당)
- */
+ */ 
 
 public class Ex03 {
 

@@ -5,7 +5,7 @@ import java.util.*;
 public class Ex02 {
 
 	public static void main(String[] args) {
-		
+		 
 		// 다형성으로 객체 생성
 		List<String> list = new ArrayList<String>();
 		
@@ -13,7 +13,7 @@ public class Ex02 {
 		list.add("two");
 		list.add("three");
 		list.add("four");
-		list.add("five");
+		list.add("five"); 
 		
 		// 자바의 컬렉션 프레임워크에서 컬렉션에 저장 되어있는 요소들을
 		// 읽어오는 방법을 표준화 해놓은 객체가 Iterator 객체이다.
