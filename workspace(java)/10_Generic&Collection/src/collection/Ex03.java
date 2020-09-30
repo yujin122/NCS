@@ -20,6 +20,7 @@ public class Ex03 {
 		
 		List<Integer> list1 = new ArrayList<Integer>();
 		List<Integer> list2 = new LinkedList<Integer>();
+		LinkedList<Integer> list3=new LinkedList<Integer>();
 		
 		long start, end;
 		
