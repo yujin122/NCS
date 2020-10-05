@@ -1,7 +1,5 @@
 package sist;
 
-import java.awt.Color;
-
 import javax.swing.*;
 
 public class Ex04_JButton {
@@ -15,7 +13,7 @@ public class Ex04_JButton {
 		JPanel jp = new JPanel();
 		
 		// 배경색 지정!
-		jp.setBackground(Color.YELLOW);
+		//jp.setBackground(Color.YELLOW);
 		
 		// 이미지 아이콘 컴포넌트를 만들어 보자
 		ImageIcon cheey = new ImageIcon("images/cherry.jpg");
@@ -32,7 +30,7 @@ public class Ex04_JButton {
 		jp.add(jb4);
 		
 		// 버튼을 비활성화 시키는 방법
-		jb3.setEnabled(false);
+		//jb3.setEnabled(false);
 		//jb3.setVisible(false);
 		
 		// 프레임에 컨테이너 올리기!
