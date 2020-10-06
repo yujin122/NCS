@@ -1,13 +1,16 @@
 package sist;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-public class JoinScreen {
-
-	public static void main(String[] args) {
-		
-		JFrame jf = new JFrame("제품관리 시스템");
+public class JoinScreen extends JFrame{
+	
+	public JoinScreen() {
+	
+		super("제품관리 시스템");
 		
 		JPanel title = new JPanel();
 		
@@ -87,15 +90,80 @@ public class JoinScreen {
 		jp2.add(grad, BorderLayout.NORTH);
 		jp2.add(join, BorderLayout.CENTER);
 		
-		jf.setLayout(new BorderLayout());
+		setLayout(new BorderLayout());
 		
-		jf.add(title, BorderLayout.NORTH);
-		jf.add(jp2, BorderLayout.CENTER);
+		add(title, BorderLayout.NORTH);
+		add(jp2, BorderLayout.CENTER);
 		
-		jf.setBounds(200, 200, 300, 350);
-		jf.setResizable(false);
-		jf.setVisible(true);
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(200, 200, 300, 350);
+		setResizable(false);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		jrb1.addActionListener(new ActionListener() {
+			
+			String select = jrb1.getText()+"를(을) 선택했군요.";
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(jrb1, select);
+			}
+		});
+		
+		jrb2.addActionListener(new ActionListener() {
+
+			String select = jrb2.getText() + "를(을) 선택했군요.";
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(jrb2, select);
+			}
+		});
+
+		jrb3.addActionListener(new ActionListener() {
+
+			String select = jrb3.getText() + "를(을) 선택했군요.";
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(jrb3, select);
+			}
+		});
+
+		jb1.addActionListener(new ActionListener() {
+	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String result;
+				
+				String grade=null;
+				
+				if(jrb1.isSelected()) {
+					grade = jrb1.getText();
+				}else if(jrb2.isSelected()) {
+					grade = jrb2.getText();
+				}else if(jrb3.isSelected()) {
+					grade = jrb3.getText();
+				}
+				
+				result = id.getText() + pwd.getText() + name.getText() + phone.getText() + grade;
+				
+				id.setText(null); pwd.setText(null); name.setText(null); phone.setText(null);
+				bg.clearSelection();
+				
+				JOptionPane.showMessageDialog(jb1, result);
+			}
+		});
+		
+		jb2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new LoginScreen();
+				dispose();
+				
+			}
+		});
 	}
 
 }

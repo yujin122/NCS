@@ -1,13 +1,16 @@
 package sist;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
-public class LoginScreen {
+public class LoginScreen extends JFrame{
 
-	public static void main(String[] args) {
+	public LoginScreen() {	
 		
-		JFrame jf = new JFrame("제품관리 시스템");
+		super("제품관리 시스템");
 		
 		JPanel title = new JPanel();
 		
@@ -44,7 +47,7 @@ public class LoginScreen {
 		pwdPanel1.add(jl3);
 		
 		JPanel pwdPanel2 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		JPasswordField pwd = new JPasswordField(10);
+		JTextField pwd = new JPasswordField(10);
 		pwdPanel2.add(pwd);
 		
 		jp1.add(pwdPanel1);	jp1.add(pwdPanel2);
@@ -66,15 +69,36 @@ public class LoginScreen {
 		jp2.setLayout(new FlowLayout());
 		jp2.add(jp1);
 		
-		jf.setLayout(new BorderLayout());
-		jf.add(title, BorderLayout.NORTH);
-		jf.add(jp2, BorderLayout.CENTER);
+		setLayout(new BorderLayout());
+		add(title, BorderLayout.NORTH);
+		add(jp2, BorderLayout.CENTER);
 		
-		jf.pack();
-		jf.setResizable(false);		// 화면 크기 고정
+		pack();
+		setResizable(false);		// 화면 크기 고정
 
-		jf.setVisible(true);
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		jb1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				String result = "아이디" + id.getText() + ", 비번 : " + pwd.getText();
+				
+				JOptionPane.showMessageDialog(jb1, result);
+				
+			}
+		});
+		
+		jb2.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new JoinScreen();
+				dispose();
+				
+			}
+		});
 	}
-
 }
