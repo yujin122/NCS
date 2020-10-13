@@ -1,6 +1,7 @@
 package sist;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class Ex12_JTable {
 
@@ -22,7 +23,8 @@ public class Ex12_JTable {
 								{"강호동", "76", "79", "95", "90"},
 								{"김유신", "68", "91", "62", "90"}};
 		
-		JTable jt = new JTable(contents, header);
+		DefaultTableModel dTable = new DefaultTableModel(contents,header);
+		JTable jt = new JTable(dTable);
 		
 		// 스크롤 기능 추가
 		JScrollPane jsp = new JScrollPane(
