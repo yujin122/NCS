@@ -2,6 +2,7 @@ package sist;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 
@@ -15,9 +16,11 @@ public class MemberManagement {
 	public MemberManagement() {
 		
 		JFrame frame = new JFrame();
-		frame.setBounds(100, 100, 653, 487);
+		frame.setBounds(100, 100, 654, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
 		frame.setTitle("회원 관리");
+		
 		
 		JPanel jp = new JPanel(new BorderLayout());
 		JPanel jpn = new JPanel(new BorderLayout());
@@ -29,6 +32,7 @@ public class MemberManagement {
 		jl.setFont(new Font("굴림체", Font.BOLD, 30));
 		jl.setHorizontalAlignment(SwingConstants.CENTER);
 		jl.setBounds(243, 28, 99, 39);
+		jl.setBorder(BorderFactory.createEmptyBorder(10,0,10,0));
 		jpn.add(jl, BorderLayout.NORTH);
 		
 		JPanel tallJp = new JPanel();
@@ -90,6 +94,8 @@ public class MemberManagement {
 				ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,	
 				ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER		
 				);
+		jsp.setPreferredSize(new Dimension(500, 300));
+		jsp.setSize(new Dimension(500, 300));
 		jpc.add(jsp);
 		
 		JPanel btnJp = new JPanel(new GridLayout(1,5,1,1));
