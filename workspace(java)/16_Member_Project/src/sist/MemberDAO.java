@@ -34,9 +34,35 @@ public class MemberDAO {
 		}
 	}
 
+	public boolean isExist(String name) {
+		boolean result = false;
+		
+		String sql = "select * from member20 where name = ?";
+		
+		try {
+			pstmt = con.prepareCall(sql);
+			
+			pstmt.setString(1, name);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = true;
+			}
+			
+			rs.close(); pstmt.close(); con.close(); 
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 	public int write(String nameData, String ageData, String weightData, String heightData, String genderData) {
 		int res = 0;
 		
+		if(isExist(nameData)) {
+			
+		}
 		try {
 			
 			sql = "insert into member20 values(?, ?, ?, ?, ?)";
