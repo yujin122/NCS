@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 반복문 - while문
+	var su = 1;
+	while(su <= 10){
+		document.write("su : " + su + "<br>");
+		su++;
+	}
+	
+	document.write("<hr/>");
+	
+	// [문제1] 1~100사이의 숫자 중에서 숫자가 
+	//		  4의 배수이면서 동시에 6의 배수인 숫자를 화면에 보여주세요.
+	var su1 = 1;
+
+	while(su1 <= 100){
+		if(su1%4 == 0 && su1%6 == 0){
+			document.write(su1 + "<br>");
+		}	
+		su1++;
+	}
+	
+	// [문제2] 1~100사이의 숫자 중에서 짝수인 경우는 글자색을 파란색으로 
+	//		  출력을 하고, 홀수인 경우에는 빨간색으로 화면에 보여주세요.
+	document.write("<hr/>")
+	var su2 = 1;
+	while(su2 <= 100){
+		if(su2%2 == 0){
+			document.write("<font color =  'blue'>" + su2 + "</font><br>");
+		}else{
+			document.write("<font color = 'red'>" + su2 + "</font><br>");
+		}
+		su2++;
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

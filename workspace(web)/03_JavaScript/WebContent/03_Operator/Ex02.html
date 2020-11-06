@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 관계(비교)연산자
+	// >=, >, ==, <, <=, !=, ===
+	// 관계연산자의 결과는 항상 boolean형으로 나온다.
+	
+	var su1 = 10;
+	var su2 = 4;
+	
+	document.write(su1 + " >= " + su2 + " : " + (su1 >= su2) + "<br>")
+	document.write(su1 + " > " + su2 + " : " + (su1 > su2) + "<br>")
+	document.write(su1 + " <= " + su2 + " : " + (su1 <= su2) + "<br>")
+	document.write(su1 + " < " + su2 + " : " + (su1 < su2) + "<br>")
+	document.write(su1 + " == " + su2 + " : " + (su1 == su2) + "<br>")
+	document.write(su1 + " != " + su2 + " : " + (su1 != su2) + "<br>")
+	document.write(su1 + " === " + su2 + " : " + (su1 === su2) + "<br>")
+	document.write("<hr/>");
+	
+	var su3 = "1000";
+	var su4 = 1000;
+	
+	// == : 동등연산자로 비교 대상 값의 자료형이 다른 경우 강제로 형을 바꾼 뒤에 비교를 함
+	//		좌항과 우항을 비교해서 값의 자료형과 상관없이, 내용이 같다고 하면 true,
+	//		내용이 틀리면 false 반환함.
+	document.write(su3 + "==" + su4 + " : " + (su3 == su4) + "<br>");
+
+	// === : 일치연산자로 좌항과 우항의 내용이 정확하게 같을 때 true, 다르면 false 반환
+	//		  좌항의 값, 자료형과 우항의 값, 자료형이 서로 일치할 때 true
+	//		  내용뿐만 아니라 자료형까지 비교해서 일치시에는 true 값 반환, 그렇지 않으면 false 반환 
+	
+	// 중요) 따라서 == 연산자 대신에 === 연산자를 사용하는 것을 강력하게 권장
+	document.write(su3 + "===" + su4 + " : " + (su3 === su4) + "<br>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// [문제1] 키보드로 두 수를 입력받아서
+	//		    덧셈, 뺄셈, 곱셈, 나눗셈을 작업해 보세요..
+	
+	var num1 = prompt("연산할 첫번째 수를 입력해주세요.");
+	var num2 = prompt("연산할 두번째 수를 입력해주세요.");
+	
+	var n1 = parseInt(num1);
+	var n2 = parseInt(num2);
+	
+	document.write(n1 + "+" + n2 + " = " + (n1+n2) + "<br>");
+	document.write(n1 + "-" + n2 + " = " + (n1-n2) + "<br>");
+	document.write(n1 + "*" + n2 + " = " + (n1*n2) + "<br>");
+	document.write(n1 + "/" + n2 + " = " + (n1/n2) + "<br>");
+	
+	document.write("<hr/>");
+	
+	// 나눗셈은 일단 자료형을 double 자료형으로 변환한 후에
+	// 나눗셈 작업을 진행을 함
+	// [문제2] 키보드로 본인의 이름, 나이, 연락처를
+	//		    입력을 받아서 화면에 출력해 보세요
+
+	var name = prompt("이름을 입력해주세요.");
+	var age = prompt("나이를 입력해주세요.");
+	var phone = prompt("연락처를 입력해주세요.");
+	
+	document.write("이름 : " + name + "<br>");
+	document.write("나이 : " + age + "<br>");
+	document.write("연락처 : " + phone + "<br>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
