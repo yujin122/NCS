@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+		자바스크립트에서 배열 객체 생성 방법(3가지)
+		1. var 배열명 = new Array(원소1, 원소2, 원소3, ...원소n);
+		2. var 배열명 = [원소1, 원소2, 원소3, ...원소n];
+		3. var 배열명 = new Array();
+		- 자바스크립트에서의 배열은 모든 데이터 타입(자료형)을 다 담을 수 있음.
+	*/
+	
+	// 방법1
+	var arr1 = new Array("hong", "홍길동", 27, true);
+	
+	document.write(arr1 + "<br>");
+	
+	alert(arr1[2]);
+	
+	document.write("<hr/>");
+	
+	// 방법2
+	var arr2 = ["hong", "홍길동", 27, true];
+	
+	document.write(arr2 + "<br>");
+	
+	// 방법3
+	var arr3 = new Array();
+	
+	arr3[0] = "hong";
+	arr3[1] = "홍길동";
+	arr3[2] = 27;
+	arr3[3] = true;
+	
+	document.write(arr3 + "<br>");
+	
+	document.write(arr3[5] + "<br>");
+	
+	document.write("<hr/>");
+	
+	for(var i =0; i < arr3.length; i++){
+		document.write("arr3[" + i + "] = " + arr3[i] + "<br>");	
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

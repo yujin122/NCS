@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/* Ex02.html에 적용되는 디자인 */
+
+p{
+	color : red;
+	font-size: 20px;
+	font-family: 궁서체;
+	font-weight: bold;
+	/* background-color: yellow; */
+	text-align: center;
+}
+
+/* Ex03.html에 적용되는 디자인 */
+
+body{
+	background-color: pink;
+	background-image: url("../images/beauty.jpg");
+	/* 배경이미지가 한번만 */
+	background-repeat: no-repeat;
+	/* 배경이미지가 중앙에 */
+	background-position: center;
+}
+
+/* Ex04.html에 적용되는 디자인 */
+
+.main_text{
+	font-weight: bold;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 내장 객체 - 날짜(Date)
+	var date = new Date();
+	
+	// getYear() : 1900년을 기준으로 함 - 0이라고 인식을 함.
+	// 			   1901년은 1을 반환 함.
+	
+	//document.write("현재 년도 : " + date.getYear() + "년 <br>");
+	document.write("현재 년도 : " + date.getFullYear() + "년 <br>");
+	document.write("현재 월 : " + (date.getMonth()+1) + "월 <br>");
+	document.write("현재 일 : " + date.getDate() + "일 <br>");
+	
+	// 현재 요일 ==> 정수형 반환(0(일요일) ~ 6(토요일))
+	var day = date.getDay();
+	switch(day){
+	case 0:
+		document.write("현재 요일은 일요일 입니다.<br>");
+		break;
+	case 1:
+		document.write("현재 요일은 월요일 입니다.<br>");
+		break;
+	case 2:
+		document.write("현재 요일은 화요일 입니다.<br>");
+		break;
+	case 3:
+		document.write("현재 요일은 수요일 입니다.<br>");
+		break;
+	case 4:
+		document.write("현재 요일은 목요일 입니다.<br>");
+		break;
+	case 5:
+		document.write("현재 요일은 금요일 입니다.<br>");
+		break;
+	case 6:
+		document.write("현재 요일은 토요일 입니다.<br>");
+		break;
+	}
+	
+	// 현재 시간 - 시:분:초 받아오기
+	document.write("현재 시간 : " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>
