@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	onload = function() {
+		
+		// 2. getElementsByTagName(tagName) 를 이용하는 방법
+		// getElementsByTagName(tagName) : tagName과 일치하는 요소를 배열로 가져오는 메서드
+		
+		var headers = document.getElementsByTagName("h1");
+		/* 
+		headers[0].innerHTML = "with getElementsByTagName()";
+		headers[1].innerHTML = "with getElementsByTagName()"; */
+		
+		for(var i=0; i < headers.length; i++){
+			headers[i].innerHTML = "with getElementsByTagName()";
+		}
+	}
+</script>
+</head>
+<body>
+
+	<h1>Header1</h1>
+	<p>header1 내용</p>
+	
+	<hr/>
+	
+	<h1>Header2</h1>
+	<p>header2 내용</p>
+	
+	
+</body>
+</html>
