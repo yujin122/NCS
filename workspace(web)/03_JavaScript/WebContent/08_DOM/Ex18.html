@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	onload = function() {
+		
+		document.getElementById("myDiv");
+		
+		myDiv.style.backgroundColor = "yellow";
+		
+		// id가 myDiv인 요소의 부모노드
+		var parent = myDiv.parentNode;
+		parent.style.backgroundColor = "skyblue";
+		
+		var pparent = parent.parentNode;
+		pparent.style.backgroundColor = "pink";  
+		
+		document.getElementById("img1").onclick = function(){
+			document.getElementById("img1").src = "../images/car3.gif";
+		}
+		
+		document.getElementById("img2").onclick = function(){
+			document.getElementById("img2").style.visibility = "hidden";
+		}
+	}
+
+</script>
+</head>
+<body>
+	
+	<div>부모노드(ParentNode)</div>
+	<div class = "style1">
+		<div>테스트1</div>
+		<div>테스트12</div>
+		<div id = "myDiv">테스트2-1</div>
+		<div>테스트3</div>
+		<div>테스트4</div>
+	</div>
+	
+	<div>......................</div>
+	
+	<img src="../images/car1.gif" id = "img1">
+	<img src="../images/car2.gif" id = "img2">
+	
+</body>
+</html>

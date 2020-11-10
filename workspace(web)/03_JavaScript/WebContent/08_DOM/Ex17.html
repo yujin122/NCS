@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	#myTable{
+		width : 400px;
+		border : 1px solid black;
+		border-collapse : collapse;
+	}
+	
+	#myTable th, #myTable td {
+		border : 1px solid black;
+		text-align : center;
+	}
+
+</style>
+<script type="text/javascript">
+
+	function addRow(){
+		// 1. 한개의 <tr>태그와 4개의 <td> 태그를 만들어 보자
+		var tr = document.createElement("tr");
+		var td1 = document.createElement("td");
+		var td2 = document.createElement("td");
+		var td3 = document.createElement("td");
+		var td4 = document.createElement("td");
+		
+		// 2. 각각의 <td> 태그에 <form>태그의 text 창에서
+		//	    입력한 내용을 텍스트로 설정
+		// 폼이름.name이름.value
+		td1.innerHTML = f.num.value;
+		td2.innerHTML = f.name.value;
+		td3.innerHTML = f.phone.value;
+		td4.innerHTML = "삭    제";
+		
+		// 3. <tr> 태그에 <td> 태그를 추가해 주면 됨
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+		tr.appendChild(td3);
+		tr.appendChild(td4);
+		
+		// 4. <table> 태그의 <tbody>에 추가해 주면 됨.
+		var myTable = document.getElementById("myTable");
+		// <table> 태그의 자식 요소 중에서 두번째 자식 요소에 추가
+		var tbody = myTable.children[1];
+		
+		tbody.appendChild(tr);
+		
+		// 화면 클리어 시키는 방법
+		f.num.value = "";
+		f.name.value = "";
+		f.phone.value = "";
+		f.num.focus();
+		
+		// 삭제 글자를 클릭 시 해당 행을 삭제해 보자.
+		// <tr> 태그의 삭제 글자에 마우스가 올라갔을 때 행의 번호를 
+		// <table> 태그가 기억을 해야 함.
+		tr.onmouseover = function() {
+			
+			myTable.clickedRowIndex = this.rowIndex;
+			
+		}
+		
+		// 클릭을 하면 해당 행을 삭제
+		td4.onclick = function(){
+			
+			// 테이블의 행번호를 받아서 동적으로 테이블의 행을 삭제
+			myTable.deleteRow(myTable.clickedRowIndex);
+		}
+	}
+</script>
+</head>
+<body>
+	
+	<h2>테이블에 행을 추가 / 삭제하는 예제</h2>
+	<form name = "f">
+		<fieldset>
+			번     호 : <input type = "text" size = "3" name = "num">
+			이     름 : <input type = "text" size = "10" name = "name">
+			연 락 처 : <input type = "text" size = "15" name = "phone">
+			<input type = "button" value = "추가" onclick = "addRow()">
+		</fieldset>
+		
+		<table id = "myTable">
+			<thead>
+				<tr>
+					<th>번     호</th>
+					<th>이     름</th>
+					<th>연 락 처</th>
+					<th>삭     제</th>
+				</tr>
+			</thead>
+			<tbody>
+			
+			</tbody>
+		</table>
+	</form>
+	
+</body>
+</html>

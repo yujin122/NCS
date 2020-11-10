@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	onload = function(){
+		
+		var p = document.createElement("p");
+		var text = document.createTextNode("안녕하세요");
+		p.style.color = "red";
+		
+		p.appendChild(text);
+		document.body.appendChild(p);
+	}
+</script>
+</head>
+<body>
+	
+	<div id = "myDiv"></div>
+	
+	<!-- 
+		[문제] 아래와 같이 화면을 만들어 보세요
+			<div id = "myDiv">
+			 <p>안녕하세요</p>
+			</div >
+			안녕하세요라는 글자는 빨간색으로 처리
+	 -->
+</body>
+</html>
