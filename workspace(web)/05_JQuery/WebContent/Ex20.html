@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	/* 
+		- removeAttr("속성") : 선택한 요소에서 기존의 속성을 삭제할 때 사용.
+		- attr("속성") / attr("속성 = 값")
+		  ==> 선택한 요소에 새 속성을 추가(생성)하거나, 기존의 속성을 변경할 때 사용
+	*/
+	
+	$(function(){
+		
+		$(".text").text($(".wrap img").attr("src"));
+		$(".wrap img").attr("width", "200px");
+		$(".box img").removeAttr("border");
+	})
+	
+</script>
+</head>
+<body>
+	
+	<h1>객체 조작 및 생성</h1>
+	
+	<p class="wrap">
+		<img src = "images/apple.jpg" alt = "사과 이미지" width = "100">
+	</p>
+	
+	<p class = "text"></p>
+	
+	<p class = "box">
+		<img src = "images/cherry.jpg" alt = "체리 이미지" width = "100" border = "2">
+	</p>
+	
+</body>
+</html>

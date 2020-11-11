@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/* $(".menu li:first").css("background-color", "yellow"); */
+		$(".menu li").first().css("background-color", "yellow");
+		
+		$(".menu li:last").css("background-color", "pink");
+	});
+</script>
+</head>
+<body>
+	
+	<!-- 
+		* 제이쿼리 탐색 선택자
+		  - 제이쿼리 탐색 선택자를 이용하면 직접 선택자를 이용해 선택한 요소 중 원하는
+		         요소를 한 번 더 탐색해서 정확히 선택할 수 있는 장점이 있음.
+		* 탐색 선택자의 종류
+		  - 위치 탐색자 : 선택한 요소 중 위치를 기준으로 선택함
+		  - 속성 탐색 선택자 : 요소의 지정된 속성을 기준으로선택함
+		  - 콘텐츠 탐색 선택자 : 요소 내에서 콘텐츠의 포함 여부를 따져서 선택함
+		  - 필터링 선택자 : 선택한 요소를 한 번 더 필터링하여 선택함
+	 -->
+	 
+	<!-- 
+		위치 탐색자
+		1. 첫번째 요소 선택 : 전체 요소 중에서 첫번째 요소만 선택.
+		       형식) $("요소선택:first"), $("요소선택").first;
+	-->	 
+	
+	<h2>탐색 선택자 - 위치 탐색자</h2>
+
+	<ul class = "menu">
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+		<li>내용5</li>
+	</ul>
+	
+	
+</body>
+</html>

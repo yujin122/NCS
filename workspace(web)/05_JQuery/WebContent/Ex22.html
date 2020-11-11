@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	// val() / val(값)
+	// 입력 요소에 있는 value 값을 불러오거나 변경할 때 사용.
+	
+	$(function() {
+		alert($("#user_name").val());
+		$("#my_name").val($("#user_name").val());
+	})
+	
+</script>
+</head>
+<body>
+	
+	<p>
+		<input type = "text" name = "user_name" id = "user_name" value = "홍길동">
+	</p>
+	
+	<p>
+		<input type = "text" name = "my_name" id = "my_name">
+	</p>
+	
+</body>
+</html>

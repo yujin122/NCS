@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	/* 
+		- hide() : 노출되어 있는 요소를 숨기는 기능
+			형식) $("요소선택").hide("효과 속도(ms)", 콜백함수);
+				- 콜백함수 : 쇼과가 모두 완료되면 실행되는 함수  ==> 생략가능
+		- show() : 숨겨져 있던 요소를 노출시키는 기능
+			형식) $("요소선택").show("효과 속도(ms)", 콜백함수);
+	*/
+	
+	$(function() {
+		$(".btn1").click(function(){
+			$("h2").hide(1000, function(){
+				alert("숨김 완료!!!");
+			});
+		});
+		
+		$(".btn2").click(function(){
+			$("h2").show(1000, function(){
+				alert("노출 완료!!!");
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	
+	<button class = "btn1">Hide</button>
+	<button class = "btn2">Show</button>
+	
+	<h2>효과 관련 내용</h2>
+</body>
+</html>

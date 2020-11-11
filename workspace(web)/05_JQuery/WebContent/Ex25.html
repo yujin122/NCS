@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	/* 
+		- insertBefore() : 선택한 요소의 이전 위치에 새 요소를 추가하는 메서드
+			형식) $("새 요소").insertBefore("요소 선택")
+		- insertAfter() : 선택한 요소의 다음 위치에 새 요소를 추가하는 메서드
+			형식) $("새 요소").insertAfter("요소 선택")
+		- clone() : 선택한 요소를 복사하는 메서드
+					* true : 하위 요소까지 모두 복사
+					* false : 선택한 요소만 복사
+			형식) $("요소선택").clone(true/false)
+	
+	*/
+	
+	$(function(){
+		$("<li>새로운 내용 추가 1<li>").insertBefore(".mylist");
+		var my_clone = $(".mylist").clone(false);
+		$(my_clone).insertAfter(".mylist");
+	})
+	
+</script>
+</head>
+<body>
+	
+	<h1>요소 편집 메서드</h1>
+	<ul>
+		<li class = "mylist">내용</li>
+	</ul>
+	
+</body>
+</html>

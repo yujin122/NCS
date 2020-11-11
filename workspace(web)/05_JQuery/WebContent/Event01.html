@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	/*
+		제이쿼리 이벤트의 종류
+		1. 마우스 이벤트
+		2. 포커스 이벤트
+		3. 키보드 이벤트
+	*/
+	
+	// 1. 마우스 이벤트
+	// click() : 선택한 요소를 클릭했을 때 이벤트를 발생
+	//	형식) $("요소선택").click(function(){ ... })
+	// dblclick() : 선택한 요소를 더블클릭 했을 때 이벤트를 발생
+	//	형식) $("요소선택").dbclick(function(){ ... })
+	
+	$(function(){
+		$(".btn1").click(function(){
+			$("p").css("background-color", "yellow");	
+		});
+		
+		$(".btn2").dblclick(function(){
+			$("p").css("border", "1px solid red");
+		});
+	});
+	
+</script>
+</head>
+<body>
+	
+	<button class = "btn1">click</button>
+	<button class = "btn2">dbclick</button>
+	<br><br><br>
+	
+	<p>내용</p>
+	
+	
+</body>
+</html>

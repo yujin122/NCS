@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	/* 
+		위치 탐색자
+		5. 전체 요소 중 특정 숫자 번째 요소만 선택
+		       형식) $("요소선택:nth-child(숫자)")
+		6. 전체 요소 중 특정 배수의 요소만 선택
+		       형식) $("요소선택:nth-child(숫자n)")
+	*/
+	
+	$(function(){
+		$("li:nth-child(3)").css("color", "tomato");
+		$("li:nth-child(2n)").css("background-color", "lightgray");
+		$("li:nth-child(2n+1)").css("background-color", "skyblue");
+		
+	});
+	
+</script>
+</head>
+<body>
+
+	<h2>탐색 선택자 - 위치 탐색자</h2>
+
+	<ul>
+		<li>내용1</li>
+		<li>내용2</li>
+		<li>내용3</li>
+		<li>내용4</li>
+		<li>내용5</li>
+		<li>내용6</li>
+		<li>내용7</li>
+		<li>내용8</li>
+		<li>내용9</li>
+		<li>내용10</li>
+		<li>내용11</li>
+		<li>내용12</li>
+		<li>내용13</li>
+		<li>내용14</li>
+		<li>내용15</li>
+		<li>내용16</li>
+		<li>내용17</li>
+		<li>내용18</li>
+		<li>내용19</li>
+		<li>내용20</li>
+	</ul>
+
+</body>
+</html>
