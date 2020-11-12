@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>데카르트 홈페이지</title>
+<link rel = "stylesheet" href = "../css/style.css">
+<script type="text/javascript">
+	
+	function login_window(){
+		// window.open("파일경로명", "창이름", "가로폭/세로높이")
+		open("../login/login.html", "로그인", "width = 380px, height = 250px");
+		
+	}
+	
+	function join_window(){
+		open("../join/join.html", "회원가입", "width = 500px, height = 580px");
+	}
+</script>
+</head>
+<body>
+	
+	<div class = "container">
+		<header id = "head"> <!-- 웹 문서의 상단 영역 -->
+			<div id = "login">
+				<a href = "../Index.html">홈</a>
+				<a href = "#" onclick = "login_window()">로그인</a>
+				<a href = "#" onclick = "join_window()">회원가입</a>
+			</div>	<!-- id = "login" end -->
+			
+			<hgroup> <!-- 제목과 부제목을 그룹으로 묶어주는 역할 -->
+				<h1>데카르트, 서양 근대철학의 창시자</h1>
+				<h2>Rene Decartes, 1596~1650</h2>
+			</hgroup>
+		</header>
+		
+		<!-- 웹 문서의 네비게이션 영역 : 메뉴가 설정되는 영역 -->
+		<nav id = "navi">
+			<ul>
+				<li><a href = "../birth/birth.html">탄     생</a>
+				<li><a href = "../writing/writing.html">저     서</a>
+				<li><a href = "philosophy.html">철     학</a>
+				<li><a href = "../saying/saying.html">명     언</a>
+			</ul>
+		</nav>
+		
+		<!-- 웹 문서의 영역을 설정 -->
+		<section id = "content">
+			<h2>데카르트 철학</h2>
+			<article> <!-- 문서의 본문 영역 -->
+			<h2>'나는 생각한다. 고로 나는 존재한다.'</h2>
+			<p>라는 명제로 유명한 데카르트의 철학 사상 및 그를 계승한 사람들의 철학 사상을 지칭하는 말이다. </p>
+			<br>
+			<p>데카르트주의의 기본 사상은 합리론적·플라톤적이어서 경험론적·아리스토텔레스적인 견해와 대립되지만,</p>
+			<p> 관찰과 실험을 바탕으로 한 과학관을 발전시켰다는 점에서는 상통한다. 또한, 세계를 정신과 물질의 </p>
+			<p>이원론적인 구성으로 보아 형이상학적 이원론을 주장하였다. 그들은 인간의 정신 속에는 태어날 때부터</p>
+			<p> 외부 세계를 알 수 있는 관념이 들어 있다고 보았으며, 신과 물질세계의 존재를 증명하려고 노력하였고,</p>
+			<p> 정신과 물체를 독립된 존재로 보는 이원론적 사고를 하였다.</p>
+			<br>
+			<p>데카르트주의자들은 신은 전능하지만 인간의 지성은 유한하다고 믿었기 때문에, '코기토(cogito)'와 </p>
+			<p>'신의 계시'에 의해서만 인간은 확신을 얻을 수 있다고 생각하였다. 따라서 과학적 지식을 불확실하고</p>
+			<p> 개연적인 것으로 받아들였다.</p>
+			</article>
+		</section>
+		
+		<!-- 문서의 보조 내용 (알림, 광고) -->
+		<aside id = "sidebar">
+			<h3 align = "center">🔘 저서 구입 🔘 </h3>
+			<p>저서 구입을 원하시는 분들은 전화 010-111-1234 로
+			연락주시기 바랍니다.</p>
+			<img src = "../images/book1.png" width = "130" height = "160">
+			<img src = "../images/book2.png" width = "130" height = "160">
+		</aside>
+		
+		<!-- 문서의 하단 내용 -->
+		<footer id = "foot">
+		<p>글 : 염 유 진 / 저술가, 번역가</p>
+		<address>E-mail : yujin970122@gamil.com</address>
+		<p>Copyright &copy All right reserved</p> 
+		</footer>
+	</div> <!-- class = "container" end  -->
+	
+</body>
+</html>

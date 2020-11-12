@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>데카르트 홈페이지</title>
+<link rel = "stylesheet" href = "../css/style.css">
+<script type="text/javascript">
+	
+	function login_window(){
+		// window.open("파일경로명", "창이름", "가로폭/세로높이")
+		open("../login/login.html", "로그인", "width = 380px, height = 250px");
+		
+	}
+	
+	function join_window(){
+		open("../join/join.html", "회원가입", "width = 500px, height = 580px");
+	}
+</script>
+</head>
+<body>
+	
+	<div class = "container">
+		<header id = "head"> <!-- 웹 문서의 상단 영역 -->
+			<div id = "login">
+				<a href = "../Index.html">홈</a>
+				<a href = "#" onclick = "login_window()">로그인</a>
+				<a href = "#" onclick = "join_window()">회원가입</a>
+			</div>	<!-- id = "login" end -->
+			
+			<hgroup> <!-- 제목과 부제목을 그룹으로 묶어주는 역할 -->
+				<h1>데카르트, 서양 근대철학의 창시자</h1>
+				<h2>Rene Decartes, 1596~1650</h2>
+			</hgroup>
+		</header>
+		
+		<!-- 웹 문서의 네비게이션 영역 : 메뉴가 설정되는 영역 -->
+		<nav id = "navi">
+			<ul>
+				<li><a href = "birth.html">탄     생</a>
+				<li><a href = "../writing/writing.html">저     서</a>
+				<li><a href = "../philosophy/philosophy.html">철     학</a>
+				<li><a href = "../saying/saying.html">명     언</a>
+			</ul>
+		</nav>
+		
+		<!-- 웹 문서의 영역을 설정 -->
+		<section id = "content">
+			<h2>데카르트 탄생</h2>
+			<article> <!-- 문서의 본문 영역 -->
+				<p>
+				데카르트는 프랑스의 명망이 높은 부모 아래서 유복한 어린 시절을 보냈다. 10살 때 예수회 학교에 입학하여</p> 
+				<p>8년 간 철학과 논리학, 수학을 공부했다. 데카르트는 수학을 공부하면서 수학의 명쾌한 논리 전개에 큰 매력을</p> 
+				<p>느꼈다. 그는 수학처럼 누구나 인정할 수 있는 논리적인 사고를 통해서 확실한 진리를 얻을 수 있다고 생각했고 </p>
+				<p>그러면서 더욱더 수학의 세계에 빠져 들었다. 그는 더 깊이 있는 공부를 하러 파리로 갔다. </p>
+				<p>그러나 친구들의 퇴폐적인 귀족 생활에 회의를 느껴 군대에 자원했다. 군대에 있으면서 시간의 여유를 갖고 마음의</p>
+				<p> 평안을 다시  데카르는 유럽 전역을 여행하면서 학문을 쌓았다.</p>
+				<p> 1648년 데카르트는 스웨덴의 크리스티나 여왕에게 초청을 받아 여왕의 개인 교수로 일했다. 여왕이 새벽에 일어나</p>
+				<p>공부하는 것을 좋아했기 때문에 데카르트는 새벽마다 일찍 일어나서 강의를 해야 했다. 또 오후에는 스웨덴 왕립 </p>
+				<p>아카데미에서 일을 하는 등 무리하게 일했다.이 때문에 데카르트의 건강은 급속하게 나빠졌고, 결국 폐렴에 걸려 </p>
+				<p>1650년 세상을 떠나고 말았다.</p>
+				<p>모든 과학을 수학으로 환원시켜 생각하는 근대 과학 정신의 기틀을 닦은 사람이 바로 데카르트이다.</p>
+				<p>이런 사고를 통해 만들어진 해석 기하학은 미적분학을 발전시켰고, 천문학처럼 다른 분야에서도 응용해 계산할 </p>
+				<p>수 있도록 영향력을 행사하게 하였다.</p>		
+			</article>
+		</section>
+		
+		<!-- 문서의 보조 내용 (알림, 광고) -->
+		<aside id = "sidebar">
+			<h3 align = "center">🔘 저서 구입 🔘 </h3>
+			<p>저서 구입을 원하시는 분들은 전화 010-111-1234 로
+			연락주시기 바랍니다.</p>
+			<img src = "../images/book1.png" width = "130" height = "160">
+			<img src = "../images/book2.png" width = "130" height = "160">
+		</aside>
+		
+		<!-- 문서의 하단 내용 -->
+		<footer id = "foot">
+		<p>글 : 염 유 진 / 저술가, 번역가</p>
+		<address>E-mail : yujin970122@gamil.com</address>
+		<p>Copyright &copy All right reserved</p> 
+		</footer>
+	</div> <!-- class = "container" end  -->
+	
+</body>
+</html>

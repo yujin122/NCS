@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+#join_wrap {
+	width : 400px;
+	height : 430px;
+	margin-left: auto;
+	margin-right : auto;
+	margin-top : 20px;
+	margin-bottom : 10px;
+	border : 2px solid lightgray;
+	border-radius: 10px;
+}
+
+.join_title {
+	margin-top : 20px;
+	width : 150px;
+	margin-left: auto;
+	margin-right : auto;
+	text-align: center;
+	fonsize : 30px;
+}
+
+#join_t {
+	margin : 0 10px 0 40px;
+}
+
+.input_box {
+	border-radius: 5px;
+	border : 1px solid gray;
+}
+
+.input_box:hover {
+	background-color: #ccc;
+}
+
+#join_menu {
+	margin : 15px 150px 0px 190px;
+}
+
+.join_b:hover {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.txt {
+	margin : 0;
+	padding : 0;
+}

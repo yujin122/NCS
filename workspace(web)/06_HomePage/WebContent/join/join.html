@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/join.css">
+<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+<script type="text/javascript" src = "../js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	
+	function check(){
+		if(frm.name.value == ""){
+			alert("이름을 입력해주세요.");
+			frm.name.focus();
+			return false;
+		}
+		if(frm.id.value == ""){
+			alert("아이디를 입력해주세요.");
+			frm.id.focus();
+			return false;
+		}
+		if(frm.pwd_1.value == ""){
+			alert("비밀번호를 입력해주세요.");
+			frm.pwd_1.focus();
+			return false;
+		}
+		if(frm.addr1.value == "" || frm.addr2.value == ""){
+			alert("주소를 입력해주세요.");
+			frm.addr2.focus();
+			return false;
+		}
+		
+		if(frm.phone2.value == "" || frm.phone3.value == ""){
+			alert("핸드폰번호를 입력해주세요.");
+			frm.phone2.focus();
+			return false;
+		}
+	}
+	
+	$(function(){
+		$("#pwd2").keyup(function(e){
+			
+			if($("#pwd1").val() == "" || $("#pwd2").val() == ""){
+				$(".txt").text(" ");
+			}else if($("#pwd1").val() != "" && $("#pwd2").val() != ""){
+				if($("#pwd1").val() == $("#pwd2").val()){
+					$(".txt").text("비밀번호가 일치합니다")
+							.css("color", "green")
+							.css("font-size", "10px");
+				}else{
+					$(".txt").text("비밀번호가 일치하지 않습니다.")
+					.css("color", "red")
+					.css("font-size", "10px");
+				}
+			}
+		});
+		
+		$(".addr_btn").click(function(){
+			new daum.Postcode({
+				oncomplete:function(data){
+					$("[name=zip]").val(data.zonecode);
+					$("[name=addr1]").val(data.address);
+					$("[name=addr2]").val(data.buildingName);
+				}
+			}).open();
+		});
+	});
+	
+</script>
+</head>
+<body>
+	<form name = "frm" action = "http://www.google.com"
+		onsubmit = "return check()">
+	<div id = "join_wrap">
+		<h2 class = "join_title">회원가입</h2>
+	<table id = "join_t">
+		<tr>
+			<th>이름 </th>
+			<td><input type = "text" class = "input_box" id = "name" size = "20">
+		</tr>
+		<tr>
+			<th>아이디</th>
+			<td><input type = "text" class = "input_box" id = "id" size = "20">
+				<input type = "button" value = "중복확인">
+			</td>	
+		</tr>
+		<tr>
+			<th>비밀번호</th>
+			<td><input type = "password" class = "input_box" id = "pwd1" size = "20"><br/>
+				<!--  <font size = "2">(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8자~16자)</font> -->
+			</td>
+		</tr>
+		<tr>
+			<th>비밀번호 확인</th>
+			<td><input type = "password" class = "input_box" id = "pwd2" size = "20">
+			<p class = "txt"> </p>
+			</td>
+		</tr>
+		<tr>
+			<th>생일</th>
+			<td><input type = "date" class = "input_box"></td>
+		</tr>
+		<tr>
+			<th>성별</th>
+			<td><input type = "radio" name = "gender" value = "여자"> 여자
+				<input type = "radio" name = "gender" value = "남자"> 남자
+		</tr>
+		<tr>
+			<th>주소</th>
+			<td><input type = "text" class = "input_box" name = "zip" size = "10">
+				<input type = "button" value = "우편번호" class = "addr_btn"><br/>
+				<input type = "text" class = "input_box" name = "addr1" size = "30"><br/>
+				<font size = "2">기본주소</font><br/>
+				<input type = "text" class = "input_box" name = "addr2" size = "30"><br/>
+				<font size = "2">나머지주소</font><br/>
+			</td>
+		</tr>
+		
+		<tr>
+			<th>휴대전화</th>
+			<td><select id = "phone1">
+					<option value = "010">010</option>
+					<option value = "011">011</option>
+					<option value = "016">016</option>
+					<option value = "017">017</option>
+					<option value = "018">018</option>
+					<option value = "019">019</option>
+				</select> - 
+				<input type = "text" class = "input_box" id = "phone2" size = "5"> - 
+				<input type = "text" class = "input_box" id = "phone3" size = "5">
+			</td>
+		</tr>
+		<tr>
+			<th>이메일</th>
+			<td><input type = "email" class = "input_box" name = "email"></td>
+		</tr>
+	</table>
+	</div>
+	<div id = "join_menu">
+		<input type = "submit" value ="회원가입" class = "join_b">
+		<input type = "reset" value = "취소" class = "join_b">
+	</div>
+	</form>
+</body>
+</html>

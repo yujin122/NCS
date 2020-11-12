@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="01_HTML4" path="/01_HTML4" reloadable="true" source="org.eclipse.jst.jee.server:01_HTML4"/><Context docBase="02_HTML5" path="/02_HTML5" reloadable="true" source="org.eclipse.jst.jee.server:02_HTML5"/><Context docBase="03_JavaScript" path="/03_JavaScript" reloadable="true" source="org.eclipse.jst.jee.server:03_JavaScript"/><Context docBase="04_CSS3" path="/04_CSS3" reloadable="true" source="org.eclipse.jst.jee.server:04_CSS3"/><Context docBase="05_JQuery" path="/05_JQuery" reloadable="true" source="org.eclipse.jst.jee.server:05_JQuery"/></Host>
+      <Context docBase="01_HTML4" path="/01_HTML4" reloadable="true" source="org.eclipse.jst.jee.server:01_HTML4"/><Context docBase="02_HTML5" path="/02_HTML5" reloadable="true" source="org.eclipse.jst.jee.server:02_HTML5"/><Context docBase="03_JavaScript" path="/03_JavaScript" reloadable="true" source="org.eclipse.jst.jee.server:03_JavaScript"/><Context docBase="04_CSS3" path="/04_CSS3" reloadable="true" source="org.eclipse.jst.jee.server:04_CSS3"/><Context docBase="05_JQuery" path="/05_JQuery" reloadable="true" source="org.eclipse.jst.jee.server:05_JQuery"/><Context docBase="06_HomePage" path="/06_HomePage" reloadable="true" source="org.eclipse.jst.jee.server:06_HomePage"/></Host>
     </Engine>
   </Service>
 </Server>

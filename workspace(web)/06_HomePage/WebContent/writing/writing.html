@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>데카르트 홈페이지</title>
+<link rel = "stylesheet" href = "../css/style.css">
+<script type="text/javascript">
+	
+	function login_window(){
+		// window.open("파일경로명", "창이름", "가로폭/세로높이")
+		open("../login/login.html", "로그인", "width = 380px, height = 250px");
+		
+	}
+	
+	function join_window(){
+		open("../join/join.html", "회원가입", "width = 500px, height = 580px");
+	}
+</script>
+</head>
+<body>
+	
+	<div class = "container">
+		<header id = "head"> <!-- 웹 문서의 상단 영역 -->
+			<div id = "login">
+				<a href = "../Index.html">홈</a>
+				<a href = "#" onclick = "login_window()">로그인</a>
+				<a href = "#" onclick = "join_window()">회원가입</a>
+			</div>	<!-- id = "login" end -->
+			
+			<hgroup> <!-- 제목과 부제목을 그룹으로 묶어주는 역할 -->
+				<h1>데카르트, 서양 근대철학의 창시자</h1>
+				<h2>Rene Decartes, 1596~1650</h2>
+			</hgroup>
+		</header>
+		
+		<!-- 웹 문서의 네비게이션 영역 : 메뉴가 설정되는 영역 -->
+		<nav id = "navi">
+			<ul>
+				<li><a href = "../birth/birth.html">탄     생</a>
+				<li><a href = "writing.html">저     서</a>
+				<li><a href = "../philosophy/philosophy.html">철     학</a>
+				<li><a href = "../saying/saying.html">명     언</a>
+			</ul>
+		</nav>
+		
+		<!-- 웹 문서의 영역을 설정 -->
+		<section id = "content">
+			<h2>데카르트 저서</h2>
+			<article> <!-- 문서의 본문 영역 -->
+			<p>▶  데카르트 전집: Oeuvres de Descartes, 편집 Ch. Adam et P. Tannery, 11판, 1982-1991 Paris.</p>
+			<p>▶ 《정신지도규칙》: Regulae ad directionem ingenii(Rules for the Direction of the Mind), 1626-1628년</p>
+			<p>▶ 《인간, 태아발생론》: L'Homme(Man), 1630-1633년, 1662년 출판</p>
+			<p>▶ 《세계론》: Le Monde(The World), 1630-1633년, 1664년 출판</p>
+			<p>▶ 《방법서설》: Discours de la méthode(Discourse on the Method), 1637년 문예출판사 1997</p>
+			<p>▶ 《성찰》: Meditationes de prima philosophia, 1641년 양진호, 옮김, 책세상출판사 2011</p>
+			<p>▶ 《철학의 원리》: Principia philosophiae, 1644년 원석영 옮김, 아카넷 2002</p>
+			<p>▶ 《어떤 비방문에 대한 주석》: Notae in programma(Comments on a Certain Broadsheet), 1647년</p>
+			<p>▶ 《인체의 구조에 관하여》: The Description of the Human Body, 1647년</p>
+			<p>▶ 《뷔르만과의 대화》: Responsiones Renati Des Cartes(Conversation with Burman), 1648년</p>
+			<p>▶ 《정념론》: Les passions de l'âme(Passions of the Soul), 1649년 김선영 옮김, 문예출판사</p>
+			<p>▶ 《서한집》: Correspondance, 1657년, 클라우데 클레르슬리에(Claude Clerselier)에 의해 출판</p>
+						
+			</article>
+		</section>
+		
+		<!-- 문서의 보조 내용 (알림, 광고) -->
+		<aside id = "sidebar">
+			<h3 align = "center">🔘 저서 구입 🔘 </h3>
+			<p>저서 구입을 원하시는 분들은 전화 010-111-1234 로
+			연락주시기 바랍니다.</p>
+			<img src = "../images/book1.png" width = "130" height = "160">
+			<img src = "../images/book2.png" width = "130" height = "160">
+		</aside>
+		
+		<!-- 문서의 하단 내용 -->
+		<footer id = "foot">
+		<p>글 : 염 유 진 / 저술가, 번역가</p>
+		<address>E-mail : yujin970122@gamil.com</address>
+		<p>Copyright &copy All right reserved</p> 
+		</footer>
+	</div> <!-- class = "container" end  -->
+	
+</body>
+</html>

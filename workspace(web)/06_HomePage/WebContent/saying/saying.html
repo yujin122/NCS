@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>데카르트 홈페이지</title>
+<link rel = "stylesheet" href = "../css/style.css">
+<script type="text/javascript">
+	
+	function login_window(){
+		// window.open("파일경로명", "창이름", "가로폭/세로높이")
+		open("../login/login.html", "로그인", "width = 380px, height = 250px");
+		
+	}
+	
+	function join_window(){
+		open("../join/join.html", "회원가입", "width = 500px, height = 580px");
+	}
+</script>
+</head>
+<body>
+	
+	<div class = "container">
+		<header id = "head"> <!-- 웹 문서의 상단 영역 -->
+			<div id = "login">
+				<a href = "../Index.html">홈</a>
+				<a href = "#" onclick = "login_window()">로그인</a>
+				<a href = "#" onclick = "join_window()">회원가입</a>
+			</div>	<!-- id = "login" end -->
+			
+			<hgroup> <!-- 제목과 부제목을 그룹으로 묶어주는 역할 -->
+				<h1>데카르트, 서양 근대철학의 창시자</h1>
+				<h2>Rene Decartes, 1596~1650</h2>
+			</hgroup>
+		</header>
+		
+		<!-- 웹 문서의 네비게이션 영역 : 메뉴가 설정되는 영역 -->
+		<nav id = "navi">
+			<ul>
+				<li><a href = "../birth/birth.html">탄     생</a>
+				<li><a href = "../writing/writing.html">저     서</a>
+				<li><a href = "../philosophy/philosophy.html">철     학</a>
+				<li><a href = "saying.html">명     언</a>
+			</ul>
+		</nav>
+		
+		<!-- 웹 문서의 영역을 설정 -->
+		<section id = "content">
+			<h2>데카르트 명언</h2>
+			<article> <!-- 문서의 본문 영역 -->
+			<p>♣ 남을 사랑하는 아름다운 마음은 얼굴을 아름답게 한다. 그러나 남을 원망하는 나쁜 마음은 고운 얼굴을 </p>
+			<p> &nbsp;&nbsp;&nbsp;&nbsp;추악하게 만든다.</p>
+			<p>♣ 분노에 불같이 노하는 사람은 분노에 창백해지는 사람만큼 두렵지 않다.</p>
+			<p>♣ 좋은 책들을 읽는 것은 지난 몇 세기 동안에 걸친 가장 훌륭한 사람들과 대화를 하는 것과 같다.</p>
+			<p>♣ 인간에게 필요한 가장 중요한 지식은 어떻게 살 것인가, 어떻게 하면 악을 멀리하고 선을 더 많이 행할 수 </p>
+			<p> &nbsp;&nbsp;&nbsp;&nbsp;있는가 하는 것이다.</p>
+			<p>♣ 진리란 오류의 반대이다.</p>
+			<p>♣ 만약 당신이 정말로 진리를 추구하는 사람이라면, 생전에 한 번 정도는 가능한 한 모든 것을 깊게 의심할 </p>
+			<p> &nbsp;&nbsp;&nbsp;&nbsp;필요가 있다.</p>
+			<p>♣ 인간이 현명해지는 것은 경험에 의한 것이 아니라, 경험에 대처하는 능력 때문이다.</p>
+			<p>♣ 결단을 내리지 않는 것이야말로 최대의 해악이다.</p>
+			<p>♣ 훌륭한 정신을 갖는 것만으로는 충분치 않다. 중요한 것은 그것을 올바른 방향으로 이끄는 것이다.</p>
+			<p>♣ 나는 생각한다. 고로 나는 존재한다.</p>
+			</article>
+		</section>
+		
+		<!-- 문서의 보조 내용 (알림, 광고) -->
+		<aside id = "sidebar">
+			<h3 align = "center">🔘 저서 구입 🔘 </h3>
+			<p>저서 구입을 원하시는 분들은 전화 010-111-1234 로
+			연락주시기 바랍니다.</p>
+			<img src = "../images/book1.png" width = "130" height = "160">
+			<img src = "../images/book2.png" width = "130" height = "160">
+		</aside>
+		
+		<!-- 문서의 하단 내용 -->
+		<footer id = "foot">
+		<p>글 : 염 유 진 / 저술가, 번역가</p>
+		<address>E-mail : yujin970122@gamil.com</address>
+		<p>Copyright &copy All right reserved</p> 
+		</footer>
+	</div> <!-- class = "container" end  -->
+	
+</body>
+</html>
