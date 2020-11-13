@@ -8,7 +8,7 @@ body {
 
 /* 전체 div 태그에 대한 디자인 적용 */
 .container {
-	width: 950px;
+	width: 96%;
 	margin : 0 auto;
 	background-color : #fff;
 	border : 1px solid #e8e2ae;
@@ -16,9 +16,11 @@ body {
 
 /* header 영역 디자인 */
 #head {
+	width : 100%;
 	height : 208px;
 	margin-top : 0;
 	background-image : url("../images/bg.jpg");
+	background-size : 100%;
 	background-repeat: no-repeat;
 	background-position: left top;
 }
@@ -26,7 +28,8 @@ body {
 /* 로그인 영역 디자인 */
 #login {
 	float : right;
-	margin : -20px 20px 0 0;
+	margin-top : -20px;
+	margin-right : 2.0833%;
 	font-size : 12px;
 	word-spacing : 10px;		/* 글자와 글자 사이의 간견(자간) 설정 */
 	text-shadow: 1px 2px 2px #666;
@@ -47,7 +50,7 @@ body {
 header hgroup {
 	position : relative;
 	top : 60px;
-	left : 180px;
+	left : 18.75%;
 }
 
 /* header 영역의 주제목 디자인  */
@@ -57,7 +60,7 @@ header h1 {
 	text-shadow: 1px 2px 2px #000;
 }
 
-/* header 영역의 부제목 디자인  */
+/* header 영역의 부제목 디자인 */ 
 header h2 {
 	font-size : 1.6em;
 	color : #e18048;
@@ -68,7 +71,7 @@ header h2 {
 #navi {
 	background-color : #C07F5A;
 	margin-top: -15px;
-	width : 950px;
+	width : 100%;
 	height : 50px;
 }
 
@@ -76,6 +79,7 @@ header h2 {
 	list-style: none;
 	height : 40px;
 	padding-top : 10px;
+	overflow:hidden;
 }
 
 #navi ul li {
@@ -84,7 +88,10 @@ header h2 {
 }
 
 #navi a {
-	padding : 10px 120px 5px 60px;
+	padding-top : 10px;
+	padding-right : 120px;
+	padding-botton : 5px;
+	padding-left : 60px;
 	text-decoration: none;
 	color : #fff;
 }
@@ -103,27 +110,32 @@ header h2 {
 #content {
 	background-color: #fff;
 	padding-top: 5px;
-	padding-left : 10px;
-	width : 720ps;
+	padding-left : 1.0417%;
+	width : 75%;
 	float: left;
+	overflow:hidden;
 }
 
 #content article p {
 	text-align: justify;	/* 글자를 양쪽으로 균등하게 정렬 */
 }
 
+.picture img{
+	max-width : 100%;
+	height : auto;
+}
 #sidebar {
 	float : right;
 	background-color : #ffcdb5;
-	width : 200px;
-	height : 480px;
+	width : 20.8333%;
+	padding-bottom: 90px;
 	padding-top: 20px;
-	padding-left : 10px;
-	padding-right : 10px; 
+	padding-left : 1.0417%;
+	padding-right : 1.0417%; 
 }
 
 #sidebar img {
-	margin-left: 30px;
+	margin-left: 3.125%;
 	border : 1px solid #ccc;
 	opacity : 0.5;
 	text-align: center;
