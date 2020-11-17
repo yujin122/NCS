@@ -20,7 +20,7 @@ body {
 	height : 208px;
 	margin-top : 0;
 	background-image : url("../images/bg.jpg");
-	background-size : 100%;
+	background-size : cover;
 	background-repeat: no-repeat;
 	background-position: left top;
 }
@@ -33,6 +33,7 @@ body {
 	font-size : 12px;
 	word-spacing : 10px;		/* 글자와 글자 사이의 간견(자간) 설정 */
 	text-shadow: 1px 2px 2px #666;
+	overflow:hidden;
 }
 
 /* 로그인 영역의 a 태그 디자인 */
@@ -135,7 +136,7 @@ header h2 {
 }
 
 #sidebar img {
-	margin-left: 3.125%;
+	margin-left: 20%;
 	border : 1px solid #ccc;
 	opacity : 0.5;
 	text-align: center;
@@ -153,16 +154,3 @@ header h2 {
 	color : #fff;
 	clear : both;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.js"></script>
+<style type="text/css">
+	
+	div {
+		border : 1px solid red;
+	}
+	
+	#img1 {
+		background-image: url("images/flower.png");
+		height: 650px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	
+	#img2 {
+		background-image: url("images/bg2.jpg");
+		height: 650px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+</style>
+</head>
+<body>
+	<div class = "container">
+		<h1>그리드 시스템을 활용한 이미지 레이아웃</h1>
+		<div class = "row">
+			<div class = "col-md-3 col-sm-6">
+				<img src = "images/coffee-1.png" class = "img-responsive">
+			</div>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-md-3 col-sm-6">
+				<img src = "images/coffee-1.png" class = "img-responsive">
+			</div>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-md-3 col-sm-6">
+				<img src = "images/coffee-1.png" class = "img-responsive">
+			</div>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-sm-6 img-responsive" id = "img1"></div>
+			<div class = "col-sm-6 img-responsive" id = "img2"></div>
+			
+		</div>
+	</div>
+</body>
+</html>
