@@ -29,6 +29,7 @@
 				<th>보너스</th>
 				<th>부서번호</th>
 				<th>입사일자</th>
+				<th>삭제</th>
 			</tr>
 			<%
 				if(emp.size() != 0){
@@ -45,6 +46,7 @@
 							<td><%=dto.getComm() %></td>
 							<td><%=dto.getDeptno() %></td>
 							<td><%=dto.getHiredate() %></td>
+							<td> <a href = "<%=request.getContextPath()%>/delete?no=<%=dto.getEmpno() %>">삭제</a>
 						</tr>
 					<%		
 					}
@@ -52,7 +54,7 @@
 					// 데이터가 없는 경우
 					%>
 					<tr>
-						<td colspan = "8" align = "center">
+						<td colspan = "9" align = "center">
 						<h3>검색된 레코드가 없습니다.</h3>
 						</td>
 					</tr>

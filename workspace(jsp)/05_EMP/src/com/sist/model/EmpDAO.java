@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -99,6 +100,55 @@ public class EmpDAO {
 		}
 		
 		return list;
+	}
+
+	public int empAdd(EmpDTO emp) {
+		
+		int res = 0;
+		
+		try {
+			sql = "insert into emp values(?, ?, ?, ?, sysdate, ?, ?, ?)";
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setInt(1, emp.getEmpno());
+			pstmt.setString(2, emp.getEname());
+			pstmt.setString(3, emp.getJob());
+			pstmt.setInt(4, emp.getMgr());
+			pstmt.setInt(5, emp.getSal());
+			pstmt.setInt(6, emp.getComm());
+			pstmt.setInt(7, emp.getDeptno());
+			
+			res = pstmt.executeUpdate();
+			
+			pstmt.close(); con.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return res;
+		
+	}
+
+	public int empDelete(int num) {
+		
+		int res = 0;
+		
+		try {
+			sql = "delete from emp where empno = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			
+			res = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return res;
 	}
 	
 }
