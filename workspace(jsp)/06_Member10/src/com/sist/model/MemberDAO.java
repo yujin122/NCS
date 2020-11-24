@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +59,7 @@ public class MemberDAO {
 		try {
 			openConn();
 			
-			sql = "select * from member10";
+			sql = "select * from member10 order by num";
 			
 			pstmt = con.prepareStatement(sql);
 			
@@ -89,5 +90,129 @@ public class MemberDAO {
 		
 		return list;
 		
+	}
+
+	public int insertMem(Member10DTO dto) {
+		
+		int res = 0;
+		
+		sql = "insert into member10 values(member10_seq.nextval, ?, ?, ?, ?, ?, ?, ?, sysdate)";
+		
+		try {
+			openConn();
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, dto.getMemid());
+			pstmt.setString(2, dto.getMemname());
+			pstmt.setString(3, dto.getPwd());
+			pstmt.setInt(4, dto.getAge());
+			pstmt.setInt(5, dto.getMileage());
+			pstmt.setString(6, dto.getJob());
+			pstmt.setString(7, dto.getAddr());
+			
+			res = pstmt.executeUpdate();
+			
+			pstmt.close(); con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return res;
+	}
+
+	public Member10DTO contentMember(int mem_no) {
+		
+		Member10DTO mem = new Member10DTO();
+		
+		sql = "select * from member10 where num = ?";
+		
+		try {
+			openConn();
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, mem_no);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				mem.setNum(rs.getInt("num"));
+				mem.setMemid(rs.getString("memid"));
+				mem.setMemname(rs.getString("memname"));
+				mem.setPwd(rs.getString("pwd"));
+				mem.setAge(rs.getInt("age"));
+				mem.setMileage(rs.getInt("mileage"));
+				mem.setJob(rs.getString("job"));
+				mem.setAddr(rs.getString("addr"));
+				mem.setRegdate(rs.getString("regdate"));
+				
+			}
+			
+			rs.close(); pstmt.close(); con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return mem;
+		
+	}
+
+	public int updateMember(Member10DTO dto) {
+		
+		int res = 0;
+		
+		sql = "update member10 set pwd = ?, age = ?, mileage = ?, job = ?, addr = ? where num = ? ";
+		
+		try {
+			openConn();
+			
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, dto.getPwd());
+			pstmt.setInt(2, dto.getAge());
+			pstmt.setInt(3, dto.getMileage());
+			pstmt.setString(4, dto.getJob());
+			pstmt.setString(5, dto.getAddr());
+			pstmt.setInt(6, dto.getNum());
+			
+			res = pstmt.executeUpdate();
+			
+			pstmt.close(); con.close();
+			
+		} catch (SQLException e) {
+			
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return res;
+	}
+
+	public int deleteMem(int no) {
+		
+		int res = 0;
+		
+		sql = "delete from member10 where num = ?";
+		
+		try {
+			openConn();
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			
+			res = pstmt.executeUpdate();
+			
+			pstmt.close(); con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 }

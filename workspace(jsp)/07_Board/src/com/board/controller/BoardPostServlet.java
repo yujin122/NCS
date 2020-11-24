@@ -1,8 +1,6 @@
-package com.sist.controller;
+package com.board.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,30 +9,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sist.model.Member10DAO;
-import com.sist.model.Member10DTO;
-import com.sist.model.MemberDAO;
+import com.board.model.BoardDAO;
+import com.board.model.BoardDTO;
 
-@WebServlet("/select.do")
-public class SelectServlet extends HttpServlet {
+@WebServlet("/boardPost")
+public class BoardPostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public SelectServlet() {
+
+    public BoardPostServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		MemberDAO dao = MemberDAO.getInstance();
+		int no = Integer.parseInt(request.getParameter("no"));
 		
-		//Member10DAO dao = new Member10DAO();
+		BoardDAO dao = BoardDAO.getInstance();
 		
-		List<Member10DTO> dto = dao.memSelect();
+		// 조회수를 증가시키는 메서드 호출
+		dao.boardHit(no);
 		
-		request.setAttribute("list", dto);
+		BoardDTO dto = dao.getBoardPost(no);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("view/select.jsp");
+		request.setAttribute("post", dto);
+		RequestDispatcher rd = request.getRequestDispatcher("view/boardPost.jsp");
+		
 		rd.forward(request, response);
 		
 	}

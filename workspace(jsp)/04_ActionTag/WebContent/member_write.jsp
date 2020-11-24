@@ -13,7 +13,7 @@
 		<hr width = "50%" color = "gray">
 		<br><br><br>
 		
-		<form method = "post" action = "<%=request.getContextPath() %>/member_join">
+		<form method = "post" action = "member_join.jsp">
 			<table border = "1" cellsapcing = "0" width = "400">
 				<tr>
 					<th>회원아이디</th>

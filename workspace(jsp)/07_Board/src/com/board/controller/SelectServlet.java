@@ -1,7 +1,6 @@
-package com.sist.controller;
+package com.board.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -11,30 +10,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sist.model.Member10DAO;
-import com.sist.model.Member10DTO;
-import com.sist.model.MemberDAO;
+import com.board.model.BoardDAO;
+import com.board.model.BoardDTO;
 
 @WebServlet("/select.do")
 public class SelectServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     public SelectServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		BoardDAO dao = BoardDAO.getInstance();
 		
-		MemberDAO dao = MemberDAO.getInstance();
-		
-		//Member10DAO dao = new Member10DAO();
-		
-		List<Member10DTO> dto = dao.memSelect();
+		List<BoardDTO> dto = dao.boardList();
 		
 		request.setAttribute("list", dto);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("view/select.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("view/board.jsp");
 		rd.forward(request, response);
 		
 	}
