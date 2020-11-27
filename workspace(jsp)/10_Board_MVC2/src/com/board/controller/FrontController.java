@@ -11,6 +11,11 @@ import com.board.action.BoardInsertAction;
 import com.board.action.BoardListAction;
 import com.board.action.BoardPostAction;
 import com.board.action.BoardWriteAction;
+import com.board.action.BoardRemoveAction;
+import com.board.action.BoardRemoveOkAction;
+import com.board.action.BoardSearchAction;
+import com.board.action.BoardUpdateOkAction;
+import com.board.action.BoardUpdatetAction;
 
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -41,6 +46,16 @@ public class FrontController extends HttpServlet {
 			action = new BoardWriteAction();
 		}else if(command.equals("board_insert.do")) {
 			action = new BoardInsertAction();
+		}else if(command.equals("board_update.do")) {
+			action = new BoardUpdatetAction();
+		}else if(command.equals("board_remove.do")) {
+			action = new BoardRemoveAction();
+		}else if(command.equals("updateOk.do")) {
+			action = new BoardUpdateOkAction();
+		}else if(command.equals("board_removeOk.do")) {
+			action = new BoardRemoveOkAction();
+		}else if(command.equals("board_search.do")) {
+			action = new BoardSearchAction();
 		}
 		
 		String path1 = action.execute(request, response);

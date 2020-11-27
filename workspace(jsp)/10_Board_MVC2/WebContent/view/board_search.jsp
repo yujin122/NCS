@@ -11,7 +11,7 @@
 <body>
 	<div align = "center">
 		<hr width = "50%" color = "blue">
-			<h3>BOARD 테이블 전체 게시물 리스트</h3>
+			<h3>BOARD 테이블 검색 게시물 리스트</h3>
 		<hr width = "50%" color = "blue">
 		<br><br><br>
 		<table>
@@ -43,18 +43,7 @@
 		
 		<hr width = "50%" color = "blue">
 		<br>
-		<input type = "button" value = "글쓰기" onclick = "location.href = '<%=request.getContextPath() %>/board_write.do'">
-		<br><br>
-		<form method = "post" action = "board_search.do">
-			<select name = "search">
-				<option value = "title">제목</option>
-				<option value = "writer">작성자</option>
-				<option value = "cont">내용</option>
-				<option value = "title_cont">제목+내용</option>
-			</select>
-			<input name = "text" size = "15">
-			<input type = "submit" value = "검색"> 
-		</form>
+		<a href = "<%=request.getContextPath()%>/board_list.do">[전체 게시물]</a>
 	</div>
 </body>
 </html>

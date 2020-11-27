@@ -5,21 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-
-	table {
-		border : 1px solid #000;
-		border-collapse: collapse;
-		width : 400px;
-	}
-	
-	th, td {
-		border : 1px solid #000;
-		border-collapse: collapse;
-		text-align: center;
-	}
-	
-</style>
+<link rel="stylesheet" href = "./css/table.css">
 </head>
 <body>
 	<div align = "center">
