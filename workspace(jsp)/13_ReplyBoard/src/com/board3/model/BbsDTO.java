@@ -6,9 +6,9 @@ public class BbsDTO {
 	private String board_title;
 	private String board_cont;
 	private String board_pwd;
-	private String board_hit;
+	private int board_hit;
 	private String board_date;
-	private int board_broup;
+	private int board_group;
 	private int board_step;
 	private int board_indent;
 	
@@ -42,10 +42,10 @@ public class BbsDTO {
 	public void setBoard_pwd(String board_pwd) {
 		this.board_pwd = board_pwd;
 	}
-	public String getBoard_hit() {
+	public int getBoard_hit() {
 		return board_hit;
 	}
-	public void setBoard_hit(String board_hit) {
+	public void setBoard_hit(int board_hit) {
 		this.board_hit = board_hit;
 	}
 	public String getBoard_date() {
@@ -54,11 +54,11 @@ public class BbsDTO {
 	public void setBoard_date(String board_date) {
 		this.board_date = board_date;
 	}
-	public int getBoard_broup() {
-		return board_broup;
+	public int getBoard_group() {
+		return board_group;
 	}
-	public void setBoard_broup(int board_broup) {
-		this.board_broup = board_broup;
+	public void setBoard_group(int board_group) {
+		this.board_group = board_group;
 	}
 	public int getBoard_step() {
 		return board_step;

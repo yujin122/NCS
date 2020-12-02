@@ -13,7 +13,7 @@
 		<hr width = "50%" color = "blue">
 		<br><br>
 		
-		<a href = "${pageContext.request.contextPath }/board_list.do">[게시물 목록]</a>
+		<a href = "${pageContext.request.contextPath }/bbs_list.do">[게시물 목록]</a>
 		
 	</div>
 </body>

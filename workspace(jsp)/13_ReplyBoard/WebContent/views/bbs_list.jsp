@@ -6,29 +6,34 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href = "./css/table.css">
 </head>
 <body>
 	<div align = "center">
-		<hr width = "50%" color = "red">
-			<h3>BOARD 테이블 전체 게시물 리스트</h3>
-		<hr width = "50%" color = "red">
+		<hr width = "50%" color = "blue">
+			<h3>BBS 테이블 전체 게시물 리스트</h3>
+		<hr width = "50%" color = "blue">
 		<br><br><br>
-		<table>
+		<table border = "1" cellspacing = "0" width = "600">
 			<tr>
 				<th>글번호</th>
 				<th>글제목</th>
 				<th>조회수</th>
 				<th>작성일</th>
+				<th>Group</th>
+				<th>Step</th>
+				<th>Indent</th>
 			</tr>
 			<c:set var = "list" value = "${list }" />
 			<c:if test="${!empty list }">
 				<c:forEach items = "${list }" var = "dto">
 					<tr>
 						<td>${dto.getBoard_no() }</td>
-						<td><a href = "board_post.do?no=${dto.getBoard_no() }">${dto.getTitle() }</a></td>
+						<td><a href = "bbs_cont.do?no=${dto.getBoard_no() }">${dto.getBoard_title() }</a></td>
 						<td>${dto.getBoard_hit() }</td>
-						<td>${dto.getRegdate().substring(0,10) }</td>
+						<td>${dto.getBoard_date().substring(0,10) }</td>
+						<td>${dto.getBoard_group() }</td>
+						<td>${dto.getBoard_step() }</td>
+						<td>${dto.getBoard_indent() }</td>
 					</tr>
 				</c:forEach>
 			</c:if>
@@ -39,12 +44,15 @@
 					</td>
 				</tr>
 			</c:if>
+			<tr>
+				<td colspan = "7" align = "right">
+				<input type = "button" value = "글쓰기" 
+				onclick = "location.href = '${pageContext.request.contextPath}/bbs_write.do'">
+			</tr>
 		</table>
 		
 		<hr width = "50%" color = "blue">
 		<br>
-		<input type = "button" value = "글쓰기" onclick = "location.href = '<%=request.getContextPath() %>/board_write.do'">
-		<br><br>
 		<form method = "post" action = "board_search.do">
 			<select name = "search">
 				<option value = "title">제목</option>
