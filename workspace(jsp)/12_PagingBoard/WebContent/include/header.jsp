@@ -11,7 +11,7 @@
 	
 	<div id = "top_login">
 		<ul>
-			<li><a href = "./main.jsp">홈</a> </li>
+			<li><a href = "./views/main.jsp">홈</a> </li>
 			<li><a href = "${pageContext.request.contextPath }/login.do">${name }님</a> </li>
 			<li><a href = "${pageContext.request.contextPath }/join.do">회원가입</a> </li>
 			<li><a href = "${pageContext.request.contextPath }/logout.do">로그아웃</a> </li>

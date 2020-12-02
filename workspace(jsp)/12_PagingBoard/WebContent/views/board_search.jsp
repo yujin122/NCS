@@ -15,7 +15,7 @@
 		<div class = "clear"></div>
 		<br>
 		<hr width = "50%" color = "red">
-			<h3>MVC-2 모델 BOARD 테이블 게시물 전체 리스트</h3>
+			<h3>MVC-2 모델 BOARD 테이블 게시물 검색 리스트</h3>
 		<hr width = "50%" color = "red">
 		<br><br>
 		<table>
@@ -30,7 +30,7 @@
 			<c:forEach items="${list }" var = "dto">
 				<tr>
 					<td>${dto.getBoard_no() }</td>
-					<td><a href = "board_cont.do?no=${dto.getBoard_no() }&page=${page }">${dto.getTitle() }</a></td>
+					<td><a href = "board_searchCont.do?no=${dto.getBoard_no() }&page=${page }&find_field=${find_field }&find_name=${find_name }">${dto.getTitle() }</a></td>
 					<td>${dto.getBoard_hit() }</td>
 					<td>${dto.getRegdate().substring(0,10) }</td>
 				</tr>
@@ -43,41 +43,27 @@
 					</td>
 				</tr>
 			</c:if>
-			<tr>
-				<td colspan = "4" align = "right">
-					<input type = "button" value = "글쓰기"
-						onclick = "location.href = 'board_write.do'">
-				</td>
-			</tr>
+
 		</table>
 		<c:if test="${page > block }">
-			<a href = "board_list.do?page=1">◀◀</a>
-			<a href = "board_list.do?page=${startBlock-1 }">◀</a>
+			<a href = "board_search.do?page=1&find_field=${find_field }&find_name=${find_name }">◀◀</a>
+			<a href = "board_search.do?page=${startBlock-1 }&find_field=${find_field }&find_name=${find_name }">◀</a>
 		</c:if>
 		
 		<c:forEach begin = "${startBlock }" end = "${endBlock }" step="1" var = "i">
 			<c:if test="${i == page }">
-				<b><a href = "board_list.do?page=${i }">${i }</a></b>
+				<b><a href = "board_search.do?page=${i }&find_field=${find_field }&find_name=${find_name }">${i }</a></b>
 			</c:if>
 			<c:if test="${i != page }">
-				<a href = "board_list.do?page=${i }">${i }</a>
+				<a href = "board_search.do?page=${i }&find_field=${find_field }&find_name=${find_name }">${i }</a>
 			</c:if>
 		</c:forEach>
 		
 		<c:if test="${endBlock < allPage }">
-			<a href = "board_list.do?page=${endBlock + 1 }">▶</a>
-			<a href = "board_list.do?page=${allPage }">▶▶</a>
+			<a href = "board_search.do?page=${endBlock + 1 }&find_field=${find_field }&find_name=${find_name }">▶</a>
+			<a href = "board_list.do?page=${allPage }&find_field=${find_field }&find_name=${find_name }">▶▶</a>
 		</c:if>
-		<form method = "post" action = "${pageContext.request.contextPath }/board_search.do">
-		<select name = "find_field">
-			<option value = "title">글제목</option>
-			<option value = "cont">글내용</option>
-			<option value = "title_cont">글제목+글내용</option>
-			<option value = "writer">작성자</option>
-		</select>
-		<input type = "text" name = "find_name">
-		<input type = "submit" value = "검색">
-	</form>
+		<a href = "board_list.do">[전체 리스트]</a>
 	</div>
 </body>
 </html>

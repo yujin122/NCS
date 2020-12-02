@@ -11,7 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.board2.action.Action;
 import com.board2.action.BoardContAction;
+import com.board2.action.BoardDeleteAction;
+import com.board2.action.BoardDeleteOkAction;
+import com.board2.action.BoardEditAction;
+import com.board2.action.BoardEditOkAtion;
 import com.board2.action.BoardListAction;
+import com.board2.action.BoardSearchContAction;
 import com.board2.action.BoardWrite;
 import com.board2.action.LoginOkAction;
 
@@ -51,6 +56,28 @@ public class FrontController extends HttpServlet{
 			action = new BoardContAction();
 			action.excute(request, response);
 			viewPage = "views/board_cont.jsp";
+		}else if(command.equals("board_edit.do")) {
+			action = new BoardEditAction();
+			action.excute(request, response);
+			viewPage = "views/board_edit.jsp";
+		}else if(command.equals("board_edit_ok.do")) {
+			action = new BoardEditOkAtion();
+			action.excute(request, response);
+		}else if(command.equals("board_delete.do")) {
+			action = new BoardDeleteAction();
+			action.excute(request, response);
+			viewPage = "views/board_delete.jsp";
+		}else if(command.equals("board_delete_ok.do")) {
+			action = new BoardDeleteOkAction();
+			action.excute(request, response);
+		}else if(command.equals("board_search.do")) {
+			action = new BoardSearchAction();
+			action.excute(request, response);
+			viewPage = "views/board_search.jsp";
+		}else if(command.equals("board_searchCont.do")) {
+			action = new BoardSearchContAction();
+			action.excute(request, response);
+			viewPage = "views/board_search_cont.jsp";
 		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(viewPage);
