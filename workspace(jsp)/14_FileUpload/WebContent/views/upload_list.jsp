@@ -10,7 +10,7 @@
 <body>
 	<div align = "center">
 		<hr width = "50%" color = "blue">
-			<h3>BBS 테이블 전체 게시물 리스트</h3>
+			<h3>UPLOAD 테이블 전체 게시물 리스트</h3>
 		<hr width = "50%" color = "blue">
 		<br><br><br>
 		<table border = "1" cellspacing = "0" width = "600">
@@ -24,15 +24,12 @@
 			<c:if test="${!empty list }">
 				<c:forEach items = "${list }" var = "dto">
 					<tr>
-						<td>${dto.getBoard_no() }</td>
+						<td>${dto.getUpload_no() }</td>
 						<td>
-						<c:forEach begin="1" end = "${dto.getBoard_indent() }">
-						&nbsp;&nbsp;
-						</c:forEach>
-						<a href = "bbs_cont.do?no=${dto.getBoard_no() }">${dto.getBoard_title() }</a>
+						<a href = "upload_cont.do?no=${dto.getUpload_no() }">${dto.getUpload_title() }</a>
 						</td>
-						<td>${dto.getBoard_hit() }</td>
-						<td>${dto.getBoard_date().substring(0,10) }</td>
+						<td>${dto.getUpload_hit() }</td>
+						<td>${dto.getUpload_date().substring(0,10) }</td>
 					</tr>
 				</c:forEach>
 			</c:if>
@@ -46,10 +43,10 @@
 			<tr>
 				<td colspan = "7" align = "right">
 				<input type = "button" value = "글쓰기" 
-				onclick = "location.href = '${pageContext.request.contextPath}/bbs_write.do'">
+				onclick = "location.href = '${pageContext.request.contextPath}/upload_write.do'">
 			</tr>
 		</table>
-		<c:if test="${page > block }">
+		<%-- <c:if test="${page > block }">
 			<a href = "bbs_list.do?page=1">◀◀</a>
 			<a href = "bbs_list.do?page=${startBlock-1 }">◀</a>
 		</c:if>
@@ -66,10 +63,10 @@
 		<c:if test="${endBlock < allPage }">
 			<a href = "bbs_list.do?page=${endBlock + 1 }">▶</a>
 			<a href = "bbs_list.do?page=${allPage }">▶▶</a>
-		</c:if>
+		</c:if> --%>
 		<hr width = "50%" color = "blue">
 		<br>
-		<form method = "post" action = "board_search.do">
+		<form method = "post" action = "upload_search.do">
 			<select name = "search">
 				<option value = "title">제목</option>
 				<option value = "writer">작성자</option>

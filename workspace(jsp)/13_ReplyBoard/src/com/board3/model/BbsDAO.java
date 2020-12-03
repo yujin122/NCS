@@ -69,15 +69,23 @@ public class BbsDAO {
 	}
 
 
-	public List<BbsDTO> getBbsList() {
+	public List<BbsDTO> getBbsList(int page, int rowsize) {
 		List<BbsDTO> list = new ArrayList<BbsDTO>();
+		
+		int startNo = (page * rowsize) - (rowsize - 1);
+		// 해당 페이지의 끝 번호
+		int endNo = (page * rowsize);
 		
 		openConn();
 		
-		sql = "select * from jsp_bbs order by board_group desc";
+		sql = "select * from (select b.*, row_number() over(order by b.board_group desc, board_step) rnum "
+				+ "from jsp_bbs b) "
+				+ "where rnum >= ? and rnum <= ?";
 		
 		try {
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, startNo);
+			pstmt.setInt(2, endNo);
 			
 			rs = pstmt.executeQuery();
 			
@@ -258,6 +266,83 @@ public class BbsDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return res;
+	}
+
+	public void replyUpdate(int group, int step) {
+		openConn();
+		
+		sql = "update jsp_bbs set board_step = board_step+1 where board_step > ? and board_group = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, step);
+			pstmt.setInt(2, group);
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+	}
+	
+
+	public int replyeBbs(BbsDTO dto) {
+		int res = 0;
+		
+		openConn();
+		
+		sql = "insert into jsp_bbs values(bbs_seq.nextval, ?, ?, ?, ?, default, sysdate, ?, ?, ?)";		
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, dto.getBoard_writer());
+			pstmt.setString(2, dto.getBoard_title());
+			pstmt.setString(3, dto.getBoard_cont());
+			pstmt.setString(4, dto.getBoard_pwd());
+			pstmt.setInt(5, dto.getBoard_group());
+			pstmt.setInt(6, dto.getBoard_step()+1);
+			pstmt.setInt(7, dto.getBoard_indent()+1);
+			
+			res = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+
+		return res;
+	}
+
+
+	public int getListCount() {
+		int res = 0;
+		
+		openConn();
+		
+		sql = "select count(*) from jsp_bbs";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				res = rs.getInt(1);
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
 			closeConn(rs, pstmt, con);
 		}
 		
