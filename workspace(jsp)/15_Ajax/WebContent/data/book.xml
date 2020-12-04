@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+	<book>
+		<title>최범균의 JSP 2.3</title>
+		<author>최범균</author>
+		<price>32,000</price>
+	</book>
+	<book>
+		<title>TCP/IP</title>
+		<author>윤성우</author>
+		<price>23,000</price>
+	</book>
+	<book>
+		<title>오라클 웅애웅</title>
+		<author>서진수</author>
+		<price>26,000</price>
+	</book>
+	<book>
+		<title>자바웅애웅</title>
+		<author>남궁성</author>
+		<price>28,000</price>
+	</book>
+	<book>
+		<title>자료구조</title>
+		<author>천인국</author>
+		<price>19,000</price>
+	</book>
+</books>

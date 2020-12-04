@@ -37,7 +37,7 @@ public class FrontController extends HttpServlet{
 		String viewPage = null;
 		
 		if(command.equals("join.do")) {
-			
+			viewPage = "views/join.jsp";
 		}else if(command.equals("login.do")) {
 			viewPage = "views/login.jsp";
 		}else if(command.equals("login_ok.do")) {

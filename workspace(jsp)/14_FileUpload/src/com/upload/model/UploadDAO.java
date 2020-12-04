@@ -187,4 +187,78 @@ public class UploadDAO {
 		
 		
 	}
+
+	public int updateUpload(UploadDTO dto) {
+		int res = 0;
+		
+		openConn();
+		
+		try {
+			sql = "select upload_pwd from upload where upload_no = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, dto.getUpload_no());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				if(dto.getUpload_pwd().equals(rs.getString(1))) {
+					sql = "update upload set upload_writer = ?, upload_title = ?, upload_cont = ?, upload_file = ? where upload_no = ?";
+					
+					pstmt = con.prepareStatement(sql);
+					pstmt.setString(1, dto.getUpload_writer());
+					pstmt.setString(2, dto.getUpload_title());
+					pstmt.setString(3, dto.getUpload_cont());
+					pstmt.setString(4, dto.getUpload_file());
+					pstmt.setInt(5, dto.getUpload_no());
+					
+					res = pstmt.executeUpdate();
+					
+				}else {
+					res = -1;
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return res;
+	}
+
+	public int deleteUpload(int num, String pwd) {
+		int res = 0;
+		
+		openConn();
+		
+		try {
+			sql = "select upload_pwd from upload where upload_no = ?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				if(rs.getString(1).equals(pwd)) {
+					sql = "delete from upload where upload_no = ?";
+					
+					pstmt = con.prepareStatement(sql);
+					pstmt.setInt(1, num);
+					
+					res = pstmt.executeUpdate();
+				}
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return res;
+	}
 }
