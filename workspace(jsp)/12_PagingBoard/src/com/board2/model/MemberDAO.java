@@ -115,4 +115,30 @@ public class MemberDAO {
 		
 		return dto;
 	}
+	
+	public int checkMemberId(String userId) {
+		int res = 0;
+		
+		openConn();
+		
+		sql = "select memid from member10 where memid = ?";
+		
+		try {
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				res = 1;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			closeConn(rs, pstmt, con);
+		}
+		
+		return res;
+	}
 }

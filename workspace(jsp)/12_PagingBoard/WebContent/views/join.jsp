@@ -26,6 +26,42 @@
 				$("#mem_id").val("").focus();
 			}
 			
+			// 입력 길이 체크
+			if($.trim($("#mem_id").val()).length < 16){
+				var warningTxt = '<font color = "red">아이디는 16자 이하이어야 합니다.</font>';
+				$("#idcheck").text('');	
+				$("#idcheck").show();	
+				$("#idcheck").append(warningTxt);	
+				$("#mem_id").val("").focus();
+			}
+			
+			// 아이디 중복 여부 확인 - Ajax 기술(비동기 통신)
+			$.ajax({
+				type : "post",
+				url : "views/idCheck.jsp",
+				data : {"userId" : userId},
+				//dataType : "jsp",
+				success : function(data){
+					if(data == 1){
+						console.log(data);
+						var warningTxt = '<font color = "red">중복 아이디입니다.</font>';
+						$("#idcheck").text('');	
+						$("#idcheck").show();	
+						$("#idcheck").append(warningTxt);	
+						$("#mem_id").val("").focus();
+					}else{
+						console.log(data);
+						var warningTxt = '<font color = "red">사용 가능한 아이디입니다.</font>';
+						$("#idcheck").text('');	
+						$("#idcheck").show();	
+						$("#idcheck").append(warningTxt);
+					}
+				},
+				error : function(request, status, error){
+					alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				}
+			});
+			
 		});
 	})
 </script>
