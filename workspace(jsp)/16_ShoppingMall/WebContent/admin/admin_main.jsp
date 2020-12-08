@@ -12,8 +12,8 @@
 	
 	<div align = "center">
 		<ul>
-			<li><a href = "${pageContext.request.contextPath }/admin_cart_input.do">쇼핑 카테고리 등록</a></li>
-			<li><a href = "${pageContext.request.contextPath }/admin_cart_list.do">쇼핑 카테고리</a></li>
+			<li><a href = "${pageContext.request.contextPath }/admin_cat_input.do">쇼핑 카테고리 등록</a></li>
+			<li><a href = "${pageContext.request.contextPath }/admin_cat_list.do">쇼핑 카테고리 목록</a></li>
 			<li><a href = "${pageContext.request.contextPath }/admin_prod_input.do">상품 등록</a></li>
 		</ul>
 	</div>

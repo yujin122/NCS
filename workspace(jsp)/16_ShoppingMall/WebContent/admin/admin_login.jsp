@@ -21,10 +21,10 @@
 				</tr>
 				<tr>
 				<th>비밀번호</th>
-				<td><input type = "text" name = "pwd"></td>
+				<td><input type = "password" name = "pwd"></td>
 				</tr>
 				<tr>
-					<td colspan = "2">
+					<td colspan = "2" align = "center">
 						<input type = "submit" value = "로그인">
 						<input type = "reset" value = "취소">
 					</td>

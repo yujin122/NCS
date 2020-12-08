@@ -19,10 +19,10 @@
 					<a href = "${pageContext.request.contextPath }/admin_main.do">관리자 홈</a>
 				</td>
 				<td>
-					<a href = "${pageContext.request.contextPath }/admin_cart_input.do">카테고리 등록</a>
+					<a href = "${pageContext.request.contextPath }/admin_cat_input.do">카테고리 등록</a>
 				</td>
 				<td>
-					<a href = "${pageContext.request.contextPath }/admin_cart_list.do">카테고리 목록</a>
+					<a href = "${pageContext.request.contextPath }/admin_cat_list.do">카테고리 목록</a>
 				</td>
 				<td>
 					<a href = "${pageContext.request.contextPath }/admin_prod_input.do">상품 등록</a>

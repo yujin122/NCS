@@ -19,7 +19,9 @@
 				<th>글제목</th>
 				<th>조회수</th>
 				<th>작성일</th>
-			</tr>
+				<th>Group</th>
+				<th>Step</th>
+				<th>Indent</th>
 			<c:set var = "list" value = "${list }" />
 			<c:if test="${!empty list }">
 				<c:forEach items = "${list }" var = "dto">
@@ -33,6 +35,9 @@
 						</td>
 						<td>${dto.getBoard_hit() }</td>
 						<td>${dto.getBoard_date().substring(0,10) }</td>
+						<td>${dto.getBoard_group() }</td>
+						<td>${dto.getBoard_step() }</td>
+						<td>${dto.getBoard_indent() }</td>
 					</tr>
 				</c:forEach>
 			</c:if>

@@ -1,12 +1,10 @@
 package com.shop.model;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
 
 public class AdminShopDAO {
 	Connection con = null;
@@ -14,18 +12,15 @@ public class AdminShopDAO {
 	ResultSet rs = null;
 	String sql = null;
 	
+	private static AdminShopDAO instance = null;
 	public static final int ADMIN_LOGIN_SUCCESS = 1;
 	public static final int ADMIN_LOGIN_PWD_FAIL = -1;
 	public static final int ADMIN_LOGIN_NONEXIST = -2;
 	
 	
-	private static AdminShopDAO instance = null;
-	
 	public AdminShopDAO() {	}
 	
-	
 	public static AdminShopDAO getInstance() {
-		
 		if(instance == null) {
 			instance = new AdminShopDAO();
 		}
@@ -34,28 +29,22 @@ public class AdminShopDAO {
 	}
 	
 	public void openConn() {
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		String user = "web";
+		String password = "1234";
 		
 		try {
-			// 1. JNDI 서버 객체 생성
-			InitialContext ic = new InitialContext();
+			Class.forName(driver);
 			
-			// 2. lookup() 메서드를 이용하여 매칭되는 커넥션을 찾는다.
-			DataSource ds = (DataSource)ic.lookup("java:comp/env/jdbc/myoracle");
-			
-			// 3. DataSource 객체를 이용하여 커넥션 객체를 하나 가져온다.
-			con = ds.getConnection();
-			
-			if(con ==null) {
-				System.out.println("연결오류");
-			}
+			con = DriverManager.getConnection(url, user, password);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
-	
+
 	public void closeConn(ResultSet rs, PreparedStatement pstmt, Connection con) {
 	
 			try {
@@ -69,6 +58,7 @@ public class AdminShopDAO {
 				e.printStackTrace();
 			}
 	}
+
 
 
 	public int adminLogin(AdminShopDTO dto) {
