@@ -15,7 +15,7 @@ public class AdminProdEditOkAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String saveFolder = "C:\\Users\\yyj01\\OneDrive\\문서\\GitHub\\NCS\\workspace(jsp)\\16_ShoppingMall\\WebContent\\upload";
+		String saveFolder = "C:\\Users\\yyj01\\OneDrive\\문서\\GitHub\\NCS\\workspace(jsp)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\16_ShoppingMall\\upload";
 		
 		int fileSize = 1024*1024*5;	//5mb
 		
